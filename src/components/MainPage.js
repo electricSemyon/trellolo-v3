@@ -2,8 +2,8 @@ import React from 'react';
 import styled from 'styled-components';
 
 import Header from './Header';
-import Drawer from './Drawer';
-import Button from './Button';
+import Drawer from './Reusable/Drawer';
+import Button from './Reusable/Button';
 
 import ProjectPageIcon from 'react-icons/lib/fa/odnoklassniki-square';
 import MenuIcon from 'react-icons/lib/md/menu';

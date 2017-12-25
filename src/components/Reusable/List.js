@@ -6,7 +6,7 @@ const ListItemView = styled.li`
   align-items: center;
   list-style: none;
   width: 100%;
-  padding: 16px;
+  padding: 10px;
   background-color: #fff;
   box-sizing: border-box;
   transition: all .2s ease-out;

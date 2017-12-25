@@ -1,8 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
 
-import { NEUTRAL_COLOR } from '../theme';
-
 const DrawerView = styled.div`
   display: flex;
   flex-direction: column;

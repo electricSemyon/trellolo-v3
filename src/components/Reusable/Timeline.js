@@ -1,7 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 
-import { PRIMARY_COLOR } from '../theme';
+import { PRIMARY_COLOR } from '../../theme/index';
 
 const VerticalTimelineLine = styled.div`
   &:after {
@@ -25,7 +25,6 @@ const VerticalTimelineBadge = styled.div`
     height: 10px;
     width: 10px;
     border-radius: 50%;
-    z-index: 10;
   }
 `;
 
@@ -35,8 +34,8 @@ const VerticalTimeLineContentWrapper = styled.div`
 
 const VerticalTimeline = ({ children }) => (
   <div style={{position: 'relative'}}>
-    <VerticalTimelineBadge />
     <VerticalTimelineLine />
+    <VerticalTimelineBadge />
 
     <VerticalTimeLineContentWrapper>
       {children}

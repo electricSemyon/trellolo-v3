@@ -4,7 +4,7 @@ import DownArrow from 'react-icons/lib/md/arrow-drop-down';
 
 import Button from './Button';
 import {List, ListItem} from './List';
-import {BACKGROUND_COLOR, DARKEN_PRIMARY_COLOR} from '../theme/index';
+import {BACKGROUND_COLOR, DARKEN_PRIMARY_COLOR} from '../../theme/index';
 
 const SelectView = styled.button`
   display: flex;

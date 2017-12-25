@@ -2,8 +2,8 @@ import React from 'react';
 import styled from 'styled-components';
 import ProjectIcon from 'react-icons/lib/md/folder';
 
-import UserAvatar from './UserAvatar';
-import Select from './Select';
+import UserAvatar from './Reusable/UserAvatar';
+import Select from './Reusable/Select';
 import { PRIMARY_COLOR } from '../theme/index';
 
 const HeaderWrapperView = styled.div`
