@@ -56,16 +56,20 @@ const UserName = styled.span`
   font-size: 14px;
 `;
 
+const mockedOptionsList = [
+  { body: 'Trellolo frontend' },
+  { body: 'Trellolo backend' },
+  { body: 'Trellolo frontend' },
+  { body: 'Trellolo backend' },
+];
+
 const Header = () => (
   <HeaderWrapperView>
     <LeftHeaderSection>
       <AppTitle>Trellolo</AppTitle>
 
       <ProjectSelectWrapper>
-        <Select>
-          <ProjectIcon size={20} style={{marginRight: 4}} />
-          Trellolo Frontend
-        </Select>
+        <Select list={mockedOptionsList}/>
       </ProjectSelectWrapper>
     </LeftHeaderSection>
 

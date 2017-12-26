@@ -3,12 +3,12 @@ import styled from 'styled-components';
 
 import Header from './Header';
 import Drawer from './Reusable/Drawer';
-import Button from './Reusable/Button';
+import Button from './Reusable/ButtonBase';
 
 import ProjectPageIcon from 'react-icons/lib/fa/odnoklassniki-square';
 import MenuIcon from 'react-icons/lib/md/menu';
 import BoardsIcon from 'react-icons/lib/md/developer-board';
-import SettingsIcon from 'react-icons/lib/md/settings-applications';
+import SettingsIcon from 'react-icons/lib/md/settings';
 import HomeIcon from 'react-icons/lib/md/home';
 
 import ProjectPage from './ProjectPage';

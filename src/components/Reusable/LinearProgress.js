@@ -18,9 +18,9 @@ const LinearProgressBar1 = styled.div`
 `;
 
 const LinearProgressBarAnimation = keyframes`
-  0% { width: 100%; margin-left: -500px }
-  50% { width: 30%; margin-left: 50px; }
-  100% { width: 100%; margin-left: 500px; }
+  0% { width: 100%; margin-left: -100% }
+  50% { width: 20%; margin-left: 50px; }
+  100% { width: 100%; margin-left: 100%; }
 `;
 
 const LinearProgress = () => (

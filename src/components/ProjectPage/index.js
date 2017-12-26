@@ -7,6 +7,8 @@ import UserAvatar from '../Reusable/UserAvatar';
 import VerticalTimeline from '../Reusable/Timeline';
 import LinearProgress from '../Reusable/LinearProgress';
 import TextFIeld from '../Reusable/TextField'
+import Button from '../Reusable/Button';
+import Switch from '../Reusable/Switch';
 
 const ProjectPageWrapper = styled.div`
   padding: 16px;
@@ -45,6 +47,11 @@ class ProjectPage extends React.Component {
         <div style={{gridColumn: '1/3'}}>
           <Card fullHeight style={{overflow: 'hidden'}}>
             <TextFIeld placeholder={'Edit project title'}/>
+            <Button style={{marginLeft: 10}}>Save title</Button>
+            <br/>
+            <br/>
+            <Switch />
+            <br/>
             <h3>Trellolo front-end</h3>
             <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab aliquid aut blanditiis, cum distinctio error illo illum, incidunt laborum mollitia nesciunt obcaecati porro quidem quisquam sint sunt tempora veritatis vitae.</p>
           </Card>

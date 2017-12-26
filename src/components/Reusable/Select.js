@@ -1,10 +1,23 @@
+// @flow
+
 import React from 'react';
 import styled from 'styled-components';
 import DownArrow from 'react-icons/lib/md/arrow-drop-down';
+import ProjectIcon from 'react-icons/lib/md/folder';
 
-import Button from './Button';
 import {List, ListItem} from './List';
-import {BACKGROUND_COLOR, DARKEN_PRIMARY_COLOR} from '../../theme/index';
+
+type ListElement = {
+  body: string,
+};
+
+type SelectProps = {
+  list: Array<ListElement>,
+};
+
+type SelectState = {
+  opened: boolean,
+};
 
 const SelectView = styled.button`
   display: flex;
@@ -12,7 +25,7 @@ const SelectView = styled.button`
   align-items: center;
   border-radius: 3px;
   border: none;
-  background-color: ${DARKEN_PRIMARY_COLOR};
+  background-color: ${props => props.theme.DARKEN_PRIMARY_COLOR};
   padding-left: 10px;
   padding-right: 10px;
   min-height: 100%;
@@ -20,63 +33,59 @@ const SelectView = styled.button`
   box-shadow: inset 1px 1px 1px #333
 `;
 
-const SelectedItemWrapper = styled.div`
-  
-`;
-
-const OptionsWrapper = styled.ul`
+const OptionsWrapper = styled.div`
   position: absolute;
-  bottom: ${({ opened }) => opened ? '-200px' : '0px'};
+  top: 36px;
   left: 0;
-  height: ${({ opened }) => opened ? '200px' : '0px'};
+  max-height: ${({ opened }) => opened ? '200px' : '0'};
   width: 100%;
-  background-color: ${BACKGROUND_COLOR};
-  overflow: hidden;
-  transition: all .2s ease-out;
-  box-shadow: 0px 6px 11px #666;
+  background-color: ${props => props.theme.BACKGROUND_COLOR};
+  overflow-y: auto;
+  transition: all .1s ease-out;
+  box-shadow: 0px 6px 11px #bbb;
   margin: 0;
   padding: 0;
   ${ ({ opened }) => `transform: scale(${ opened ? '1' : '.6' });` }
+  transform-origin: top center;
 `;
 
 const OptionWrapper = styled.li`
-  padding: 16px;
-  
-  &:hover {
-    background-color: rgba(1, 1, 1, .1);
-  }
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
 `;
 
-class Select extends React.Component {
-  constructor(props) {
-    super(props);
-
-    this.state = {
-      opened: false
-    }
-  }
+class Select extends React.Component<SelectProps, SelectState> {
+  state = {
+    opened: false
+  };
 
   toggleSelect = () => this.setState({opened: !this.state.opened});
 
+  renderOptionsListItem = (body: string): React$Element<*> => (
+    <ListItem>
+      <OptionWrapper>
+        {body}
+      </OptionWrapper>
+    </ListItem>
+  );
+
   render() {
+    const { list } = this.props;
+
     return (
       <div style={{position: 'relative', height: '100%'}}>
         <SelectView onClick={this.toggleSelect}>
 
-          {this.props.children}
+          <ProjectIcon size={20} style={{marginRight: 4}} />
+          Trellolo Frontend
 
           <DownArrow color={'#fff'} size={25}/>
         </SelectView>
 
         <OptionsWrapper opened={this.state.opened}>
-          <List>
-            <ListItem>kek</ListItem>
-            <ListItem>kek</ListItem>
-            <ListItem>kek</ListItem>
-            <ListItem>kek</ListItem>
-            <ListItem>kek</ListItem>
-            <ListItem>kek</ListItem>
-            <ListItem>kek</ListItem>
+          <List style={{ fontSize: 14 }}>
+            {list.map(element => this.renderOptionsListItem(element.body))}
           </List>
         </OptionsWrapper>
       </div>

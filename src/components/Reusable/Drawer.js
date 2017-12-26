@@ -1,5 +1,13 @@
+// @flow
+
 import React from 'react';
 import styled from 'styled-components';
+
+type DrawerProps = {
+  children: React$Element<*>,
+  isOpened: boolean,
+  style?: { [string]: mixed }
+};
 
 const DrawerView = styled.div`
   display: flex;
@@ -17,7 +25,7 @@ const DRAWER_STATES = {
   OPENED: 200,
 };
 
-const Drawer = ({ children, isOpened, style }) => (
+const Drawer = ({ children, isOpened, style }: DrawerProps) => (
   <DrawerView isOpened={isOpened} style={style}>
     {children}
   </DrawerView>

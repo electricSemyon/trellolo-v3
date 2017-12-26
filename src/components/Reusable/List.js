@@ -1,5 +1,12 @@
+// @flow
+
 import React from 'react';
 import styled from 'styled-components';
+
+type ListItemProps = {
+  children?: React$Element<*>,
+  onClick?: void,
+};
 
 const ListItemView = styled.li`
   display: flex;
@@ -9,19 +16,19 @@ const ListItemView = styled.li`
   padding: 10px;
   background-color: #fff;
   box-sizing: border-box;
-  transition: all .2s ease-out;
+  transition: all .1s ease-out;
   cursor: pointer;
   
   &:hover {
-    background-color: #ddd;
+    background-color: #f0f0f0;
   }
   
   &:active {
-    background-color: #d0d0d0;
+    background-color: #dadada;
   }
 `;
 
-export const ListItem = ({ children, onClick }) => (
+export const ListItem = ({ children, onClick }: ListItemProps) => (
   <ListItemView onClick={onClick}>
     { children }
   </ListItemView>
