@@ -1,3 +1,5 @@
+// @flow
+
 import React from 'react';
 import styled from 'styled-components';
 
@@ -25,13 +27,21 @@ const SwitchCircle = styled.div`
   transition: all .2s ease-out;
 `;
 
-const Switch = ({ toggled }) => (
+type SwitchProps = {
+  toggled: boolean
+};
+
+const Switch = ({ toggled }: SwitchProps) => (
   <SwitchWrapper toggled={toggled}>
     <SwitchCircle toggled={toggled} />
   </SwitchWrapper>
 );
 
-class SwitchContainer extends React.Component {
+type SwitchContainerState = {
+  toggled: boolean,
+};
+
+class SwitchContainer extends React.Component<mixed, SwitchContainerState> {
   state = { toggled: false };
 
   toggle = () => this.setState({ toggled: !this.state.toggled });

@@ -1,10 +1,12 @@
+// @flow
+
 import React from 'react';
 import styled from 'styled-components';
 
 type ButtonProps = {
-  onClick: void,
-  children: React$Element<*>,
-  noPadding: boolean,
+  onClick?: mixed,
+  children?: React$Element<*>,
+  noPadding?: boolean,
 }
 
 const ButtonView = styled.button`
