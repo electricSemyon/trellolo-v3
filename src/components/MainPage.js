@@ -12,6 +12,7 @@ import SettingsIcon from 'react-icons/lib/md/settings';
 import HomeIcon from 'react-icons/lib/md/home';
 
 import ProjectPage from './ProjectPage';
+import Login from './Login';
 
 const ButtonIcon = styled.div`
   color: #8693aa;
@@ -95,8 +96,8 @@ class MainPage extends React.Component {
               title={'Settings'}
             />
           </Drawer>
+          {/*<ProjectPage />*/}
 
-          <ProjectPage />
         </ContentWrapper>
       </div>
     );

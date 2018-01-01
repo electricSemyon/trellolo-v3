@@ -2,14 +2,15 @@
 
 import React from 'react';
 import styled from 'styled-components';
+import type { ComponentType } from 'react';
 
 import ButtonBase from './ButtonBase';
 
-const SwitchWrapper = styled.div`
+const SwitchWrapper: ComponentType<{toggled: boolean, theme: Object}> = styled.div`
   width: 2.5em;
   height: 1.5em;
   border-radius: 1em;
-  background-color: ${props => props.toggled ? props.theme.NEUTRAL_COLOR : '#ccc'};
+  background-color: ${(props) => props.toggled ? props.theme.NEUTRAL_COLOR : '#ccc'};
   padding: 2px;
   box-sizing: border-box;
   display: flex;
@@ -19,7 +20,7 @@ const SwitchWrapper = styled.div`
   transition: all .2s ease-out;
 `;
 
-const SwitchCircle = styled.div`
+const SwitchCircle: ComponentType<{}> = styled.div`
   width: 1em;
   height: 1em;
   border-radius: 50%;
@@ -41,8 +42,13 @@ type SwitchContainerState = {
   toggled: boolean,
 };
 
-class SwitchContainer extends React.Component<mixed, SwitchContainerState> {
-  state = { toggled: false };
+type SwitchContainerProps = {
+  toggled: boolean,
+  onChange: () => boolean,
+};
+
+class SwitchContainer extends React.Component<SwitchContainerProps, SwitchContainerState> {
+  state = { toggled: this.props.toggled };
 
   toggle = () => this.setState({ toggled: !this.state.toggled });
 

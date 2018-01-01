@@ -50,7 +50,7 @@ class ProjectPage extends React.Component {
             <Button style={{marginLeft: 10}}>Save title</Button>
             <br/>
             <br/>
-            <Switch />
+            <Switch toggled/>
             <br/>
             <h3>Trellolo front-end</h3>
             <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab aliquid aut blanditiis, cum distinctio error illo illum, incidunt laborum mollitia nesciunt obcaecati porro quidem quisquam sint sunt tempora veritatis vitae.</p>

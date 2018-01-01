@@ -1,12 +1,15 @@
+// @flow
+
 import React from 'react';
 import styled from 'styled-components';
 import ProjectIcon from 'react-icons/lib/md/folder';
+import type { ComponentType } from 'react';
 
 import UserAvatar from './Reusable/UserAvatar';
 import Select from './Reusable/Select';
 import { PRIMARY_COLOR } from '../theme/index';
 
-const HeaderWrapperView = styled.div`
+const HeaderWrapperView: ComponentType<{}> = styled.div`
   display: flex;
   flex-direction: row;
   justify-content: space-between;
@@ -18,39 +21,39 @@ const HeaderWrapperView = styled.div`
   box-shadow: 0 1px 2px #aaa;
 `;
 
-const AppTitle = styled.h1`
+const AppTitle: ComponentType<{}> = styled.h1`
   margin: 0;
   color: #fff;
 `;
 
-const RightHeaderSection = styled.div`
+const RightHeaderSection: ComponentType<{}> = styled.div`
   display: flex;
   align-items: center;
 `;
 
-const LeftHeaderSection = styled.div`
+const LeftHeaderSection: ComponentType<{}> = styled.div`
   display: flex;
   align-items: center;
 `;
 
-const ProjectSelectWrapper = styled.div`
+const ProjectSelectWrapper: ComponentType<{}> = styled.div`
   margin-left: 16px;
   height: 100%;
 `;
 
-const UserMainInfo = styled.div`
+const UserMainInfo: ComponentType<{}> = styled.div`
   display: flex;
   flex-direction: column;
   align-items: flex-end;
   margin-right: 8px;
 `;
 
-const UserEmail = styled.span`
+const UserEmail: ComponentType<{}> = styled.span`
   color: #ddd;
   font-size: 12px;
 `;
 
-const UserName = styled.span`
+const UserName: ComponentType<{}> = styled.span`
   font-weight: bold;
   color: #fff;
   font-size: 14px;
