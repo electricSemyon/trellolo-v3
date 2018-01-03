@@ -6,7 +6,7 @@ import { List, ListItem } from '../Reusable/List';
 import UserAvatar from '../Reusable/UserAvatar';
 import VerticalTimeline from '../Reusable/Timeline';
 import LinearProgress from '../Reusable/LinearProgress';
-import TextFIeld from '../Reusable/TextField'
+import TextFIeld from '../Reusable/TextField';
 import Button from '../Reusable/Button';
 import Switch from '../Reusable/Switch';
 
@@ -29,13 +29,13 @@ const members = [
   { username: 'Carl', avatar: 'https://randomuser.me/api/portraits/men/89.jpg' },
   { username: 'Carl', avatar: 'https://randomuser.me/api/portraits/men/89.jpg' },
   { username: 'Carl', avatar: 'https://randomuser.me/api/portraits/men/89.jpg' },
-  { username: 'Carl', avatar: 'https://randomuser.me/api/portraits/men/89.jpg' }
+  { username: 'Carl', avatar: 'https://randomuser.me/api/portraits/men/89.jpg' },
 ];
 
 const UserListItem = ({ avatar, username }) => (
   <ListItem>
     <UserAvatar src={avatar} width={30} height={30} />
-    <span style={{marginLeft: 12}}>{ username }</span>
+    <span style={{ marginLeft: 12 }}>{ username }</span>
   </ListItem>
 );
 
@@ -44,21 +44,21 @@ class ProjectPage extends React.Component {
     return (
       <ProjectPageWrapper>
 
-        <div style={{gridColumn: '1/3'}}>
-          <Card fullHeight style={{overflow: 'hidden'}}>
-            <TextFIeld placeholder={'Edit project title'}/>
-            <Button style={{marginLeft: 10}}>Save title</Button>
-            <br/>
-            <br/>
-            <Switch toggled/>
-            <br/>
+        <div style={{ gridColumn: '1/3' }}>
+          <Card fullHeight style={{ overflow: 'hidden' }}>
+            <TextFIeld placeholder="Edit project title" />
+            <Button style={{ marginLeft: 10 }}>Save title</Button>
+            <br />
+            <br />
+            <Switch toggled />
+            <br />
             <h3>Trellolo front-end</h3>
             <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab aliquid aut blanditiis, cum distinctio error illo illum, incidunt laborum mollitia nesciunt obcaecati porro quidem quisquam sint sunt tempora veritatis vitae.</p>
           </Card>
         </div>
 
-        <div style={{gridColumn: '3/5'}}>
-          <Card fullHeight style={{overflowY: 'scroll'}}>
+        <div style={{ gridColumn: '3/5' }}>
+          <Card fullHeight style={{ overflowY: 'scroll' }}>
             <h3>Members List</h3>
             <List>
               {members.map(UserListItem)}
@@ -66,9 +66,9 @@ class ProjectPage extends React.Component {
           </Card>
         </div>
 
-        <div style={{gridColumn: '1/2', position: 'relative'}}>
-          <Card fullHeight style={{overflowY: 'scroll', position: 'relative'}}>
-            <div style={{ padding: 16}}>
+        <div style={{ gridColumn: '1/2', position: 'relative' }}>
+          <Card fullHeight style={{ overflowY: 'scroll', position: 'relative' }}>
+            <div style={{ padding: 16 }}>
               <VerticalTimeline><a href="">Lorem ipsum</a> dolor sit amet, consectetur elitadipisicingc onsectetur adipisicing elit. Fugit, reprehenderit.</VerticalTimeline>
               <VerticalTimeline>Lorem <a href="">ipsum</a> dolor sit amet, consectetur adipisicing elit. Blanditiis nemo tenetur ullam.</VerticalTimeline>
               <VerticalTimeline>Lorem <a href="">ipsum</a> dolor.</VerticalTimeline>
@@ -80,7 +80,10 @@ class ProjectPage extends React.Component {
             </div>
           </Card>
 
-          <div style={{position: 'absolute', bottom: 0, left: 0, width: '100%'}}>
+          <div style={{
+position: 'absolute', bottom: 0, left: 0, width: '100%',
+}}
+          >
             <LinearProgress />
           </div>
         </div>

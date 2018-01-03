@@ -1,13 +1,5 @@
-// @flow
-
 import React from 'react';
 import styled from 'styled-components';
-import type { ComponentType } from 'react';
-
-type ListItemProps = {
-  children?: React$Element<*>,
-  onClick?: void,
-};
 
 const ListItemView = styled.li`
   display: flex;
@@ -29,7 +21,7 @@ const ListItemView = styled.li`
   }
 `;
 
-export const ListItem = ({ children, onClick }: ListItemProps) => (
+export const ListItem = ({ children, onClick }) => (
   <ListItemView onClick={onClick}>
     { children }
   </ListItemView>

@@ -33,7 +33,7 @@ const VerticalTimeLineContentWrapper = styled.div`
 `;
 
 const VerticalTimeline = ({ children }) => (
-  <div style={{position: 'relative'}}>
+  <div style={{ position: 'relative' }}>
     <VerticalTimelineLine />
     <VerticalTimelineBadge />
 

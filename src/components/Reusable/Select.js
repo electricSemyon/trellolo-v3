@@ -1,23 +1,9 @@
-// @flow
-
 import React from 'react';
 import styled from 'styled-components';
 import DownArrow from 'react-icons/lib/md/arrow-drop-down';
 import ProjectIcon from 'react-icons/lib/md/folder';
 
 import {List, ListItem} from './List';
-
-type ListElement = {
-  body: string,
-};
-
-type SelectProps = {
-  list: Array<ListElement>,
-};
-
-type SelectState = {
-  opened: boolean,
-};
 
 const SelectView = styled.button`
   display: flex;
@@ -55,14 +41,14 @@ const OptionWrapper = styled.li`
   justify-content: flex-start;
 `;
 
-class Select extends React.Component<SelectProps, SelectState> {
+class Select extends React.Component {
   state = {
     opened: false
   };
 
   toggleSelect = () => this.setState({opened: !this.state.opened});
 
-  renderOptionsListItem = (body: string): React$Element<*> => (
+  renderOptionsListItem = (body) => (
     <ListItem>
       <OptionWrapper>
         {body}

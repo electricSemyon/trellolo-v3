@@ -1,13 +1,5 @@
-// @flow
-
 import React from 'react';
 import styled from 'styled-components';
-
-type DrawerProps = {
-  children: React$Element<*>,
-  isOpened: boolean,
-  style?: { [string]: mixed }
-};
 
 const DrawerView = styled.div`
   display: flex;
@@ -15,7 +7,7 @@ const DrawerView = styled.div`
   
   transition: all .2s ease-out;
   height: calc(100vh - 54px);
-  width: ${ ({ isOpened }) => isOpened ? DRAWER_STATES.OPENED : DRAWER_STATES.CLOSED }px;
+  width: ${({ isOpened }) => (isOpened ? DRAWER_STATES.OPENED : DRAWER_STATES.CLOSED)}px;
   border-right: 1px solid #ccc;
   flex-shrink: 0;
 `;
@@ -25,7 +17,7 @@ const DRAWER_STATES = {
   OPENED: 200,
 };
 
-const Drawer = ({ children, isOpened, style }: DrawerProps) => (
+const Drawer = ({ children, isOpened, style }) => (
   <DrawerView isOpened={isOpened} style={style}>
     {children}
   </DrawerView>

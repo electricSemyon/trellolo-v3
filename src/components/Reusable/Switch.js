@@ -1,12 +1,9 @@
-// @flow
-
 import React from 'react';
 import styled from 'styled-components';
-import type { ComponentType } from 'react';
 
 import ButtonBase from './ButtonBase';
 
-const SwitchWrapper: ComponentType<{toggled: boolean, theme: Object}> = styled.div`
+const SwitchWrapper = styled.div`
   width: 2.5em;
   height: 1.5em;
   border-radius: 1em;
@@ -20,7 +17,7 @@ const SwitchWrapper: ComponentType<{toggled: boolean, theme: Object}> = styled.d
   transition: all .2s ease-out;
 `;
 
-const SwitchCircle: ComponentType<{}> = styled.div`
+const SwitchCircle = styled.div`
   width: 1em;
   height: 1em;
   border-radius: 50%;
@@ -28,26 +25,16 @@ const SwitchCircle: ComponentType<{}> = styled.div`
   transition: all .2s ease-out;
 `;
 
-type SwitchProps = {
-  toggled: boolean
-};
 
-const Switch = ({ toggled }: SwitchProps) => (
+const Switch = ({ toggled }) => (
   <SwitchWrapper toggled={toggled}>
     <SwitchCircle toggled={toggled} />
   </SwitchWrapper>
 );
 
-type SwitchContainerState = {
-  toggled: boolean,
-};
 
-type SwitchContainerProps = {
-  toggled: boolean,
-  onChange: () => boolean,
-};
 
-class SwitchContainer extends React.Component<SwitchContainerProps, SwitchContainerState> {
+class SwitchContainer extends React.Component {
   state = { toggled: this.props.toggled };
 
   toggle = () => this.setState({ toggled: !this.state.toggled });
